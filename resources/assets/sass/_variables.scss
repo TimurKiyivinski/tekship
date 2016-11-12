@@ -54,7 +54,7 @@ $line-height-computed: floor(($font-size-base * $line-height-base)) !default;
 
 // Navbar
 $navbar-default-color: $text-color !default;
-$navbar-default-bg: $gray-dark !default;
+$navbar-default-bg: $body-bg;
 $navbar-default-border: 0;
 
 // Buttons
