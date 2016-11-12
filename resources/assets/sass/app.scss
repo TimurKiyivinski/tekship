@@ -22,6 +22,13 @@
     }
 }
 
+// Viewer
+// List Group Item background color
+$dark-grey: #32383e;
+.list-group-item {
+    background-color: $dark-grey;
+}
+
 // Page 1
 // placeholder for the video
 $video-placeholder-min-width: 480px;
