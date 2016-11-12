@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', function() {
-    return view('test');
-});
+Route::get('test', function() { return view('samples.test'); });
+Route::get('page1', function() { return view('samples.page1'); });
+Route::get('page2', function() { return view('samples.page2'); });
+Route::get('page3', function() { return view('samples.page3'); });
+Route::get('page4', function() { return view('samples.page4'); });
