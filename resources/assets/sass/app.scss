@@ -16,11 +16,13 @@
 
 // Page 1
 // placeholder for the video
-$video-placeholder-min-width
+$video-placeholder-min-width: 480px;
+$video-placeholder-min-height: 360px;
+
 .video {
     .placeholder_video {
-        min-width: 480px;
-        min-height: 240px;
+        min-width: $video-placeholder-min-width;
+        min-height: $video-placeholder-min-height;
         background-color: #fff;
     }
 
