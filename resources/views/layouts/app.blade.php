@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'TekShip') }}
                     </a>
                 </div>
 
@@ -50,8 +50,17 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
+                            <li class="inline-login">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="usernameInput" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name="passwordInput" placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" name="btn-login">Login</button>
+                                </form>
+                            </li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

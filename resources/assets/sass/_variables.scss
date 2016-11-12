@@ -4,6 +4,8 @@ $body-bg: #272b30;
 
 // Remove Border Radius
 $border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -20,8 +22,8 @@ $gray-lighter: #999 !default;
 
 // Brands
 $brand-primary: $gray-light !default;
-$brand-success: #62c462 !default;
-$brand-info: #5bc0de !default;
+$brand-success: #23ae23 !default;   //#62c462
+$brand-info: #10a4d5 !default;      //#5bc0de
 $brand-warning: #f89406 !default;
 $brand-danger:  #ee5f5b !default;
 
@@ -56,9 +58,6 @@ $line-height-computed: floor(($font-size-base * $line-height-base)) !default;
 $navbar-default-color: $text-color !default;
 $navbar-default-bg: $body-bg;
 $navbar-default-border: 0;
-
-// Buttons
-$btn-default-color: $text-color;
 
 // Inputs
 $input-border: lighten($text-color, 40%);
@@ -148,3 +147,23 @@ $alert-warning-border: $state-warning-border !default;
 $alert-danger-bg: $state-danger-bg !default;
 $alert-danger-text: $state-danger-text !default;
 $alert-danger-border: $state-danger-border !default;
+
+// Jumbotron
+$jumbotron-padding: 30px !default;
+$jumbotron-color: inherit !default;
+$jumbotron-bg: darken($body-bg, 5%) !default;
+$jumbotron-heading-color: inherit !default;
+$jumbotron-font-size: ceil(($font-size-base * 1.5)) !default;
+$jumbotron-heading-font-size: ceil(($font-size-base * 4.5)) !default;
+
+// Modal
+$modal-inner-padding: 20px !default;
+$modal-title-padding: 15px !default;
+$modal-title-line-height: $line-height-base !default;
+
+//** Background color of modal content area
+$modal-content-bg: lighten($body-bg, 3%) !default;
+$modal-content-border-color: rgba(0,0,0,.2) !default;
+$modal-content-fallback-border-color: #999 !default;
+$modal-backdrop-bg: #000 !default;
+$modal-backdrop-opacity: .5 !default;

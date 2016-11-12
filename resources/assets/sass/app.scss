@@ -14,6 +14,14 @@
     border: none;
 }
 
+// Guest
+// Login on the navbar
+.inline-login {
+    .form-inline {
+        margin-top: 6px;
+    }
+}
+
 // Page 1
 // placeholder for the video
 $video-placeholder-min-width: 480px;
