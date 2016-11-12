@@ -7,3 +7,8 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// remove borders on .panel and .alert
+.panel, .alert {
+    border: none;
+}

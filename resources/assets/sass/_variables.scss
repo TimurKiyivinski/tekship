@@ -1,29 +1,61 @@
 
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #272b30;
+
+// Remove Border Radius
+$border-radius-base: 0;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
 $list-group-border: $laravel-border-color;
 $navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
-$panel-inner-border: $laravel-border-color;
+
+// Grey Templates
+$gray-base: #000 !default;
+$gray-darker: #272B30 !default;
+$gray-dark: #3A3F44 !default;
+$gray: #52575C !default;
+$gray-light: #7A8288 !default;
+$gray-lighter: #999 !default;
 
 // Brands
-$brand-primary: #3097D1;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
+$brand-primary: $gray-light !default;
+$brand-success: #62c462 !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f89406 !default;
+$brand-danger:  #ee5f5b !default;
+
+// States
+$state-success-text: #fff !default;
+$state-success-bg: $brand-success !default;
+$state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text: #fff !default;
+$state-info-bg: $brand-info !default;
+$state-info-border: darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text: #fff !default;
+$state-warning-bg: $brand-warning !default;
+$state-warning-border: darken(adjust-hue($state-warning-bg, -10), 3%) !default;
+
+$state-danger-text: #fff !default;
+$state-danger-bg: $brand-danger !default;
+$state-danger-border: darken(adjust-hue($state-danger-bg, -10), 3%) !default;
+
+// List Group
+$list-group-border: 0;
 
 // Typography
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 14px;
 $line-height-base: 1.6;
 $text-color: #636b6f;
+$line-height-computed: floor(($font-size-base * $line-height-base)) !default;
 
 // Navbar
-$navbar-default-bg: #fff;
+$navbar-default-color: $text-color !default;
+$navbar-default-bg: $gray-dark !default;
+$navbar-default-border: 0;
 
 // Buttons
 $btn-default-color: $text-color;
@@ -34,4 +66,85 @@ $input-border-focus: lighten($brand-primary, 25%);
 $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
-$panel-default-heading-bg: #fff;
+$panel-bg: lighten($body-bg, 3%) !default;
+$panel-body-padding: 15px !default;
+$panel-heading-padding: 10px 15px !default;
+$panel-footer-padding: $panel-heading-padding !default;
+$panel-border-radius: $border-radius-base !default;
+
+//** Border color for elements within panels
+$panel-inner-border: rgba(0, 0, 0, 0.6) !default;
+$panel-footer-bg: lighten($body-bg, 10%) !default;
+
+$panel-default-text: $text-color !default;
+$panel-default-border: rgba(0, 0, 0, 0.6) !default;
+$panel-default-heading-bg: $panel-footer-bg !default;
+
+$panel-primary-text: #fff !default;
+$panel-primary-border: $panel-default-border !default;
+$panel-primary-heading-bg: $brand-primary !default;
+
+$panel-success-text: $state-success-text !default;
+$panel-success-border: $panel-default-border !default;
+$panel-success-heading-bg: $state-success-bg !default;
+
+$panel-info-text: $state-info-text !default;
+$panel-info-border: $panel-default-border !default;
+$panel-info-heading-bg: $state-info-bg !default;
+
+$panel-warning-text: $state-warning-text !default;
+$panel-warning-border: $panel-default-border !default;
+$panel-warning-heading-bg: $state-warning-bg !default;
+
+$panel-danger-text: $state-danger-text !default;
+$panel-danger-border: $panel-default-border !default;
+$panel-danger-heading-bg: $state-danger-bg !default;
+
+// Buttons
+$btn-font-weight: normal !default;
+
+$btn-default-color: #fff;
+$btn-default-bg: $gray-dark !default;
+$btn-default-border: $btn-default-bg !default;
+
+$btn-primary-color: $btn-default-color !default;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: $btn-primary-bg !default;
+
+$btn-success-color: $btn-default-color !default;
+$btn-success-bg: $brand-success !default;
+$btn-success-border: $btn-success-bg !default;
+
+$btn-info-color: $btn-default-color !default;
+$btn-info-bg: $brand-info !default;
+$btn-info-border: $btn-info-bg !default;
+
+$btn-warning-color: $btn-default-color !default;
+$btn-warning-bg: $brand-warning !default;
+$btn-warning-border: $btn-warning-bg !default;
+
+$btn-danger-color:  $btn-default-color !default;
+$btn-danger-bg:  $brand-danger !default;
+$btn-danger-border: $btn-danger-bg !default;
+
+$btn-link-disabled-color: $gray-light !default;
+
+// Alerts
+$alert-padding: 15px !default;
+$alert-link-font-weight: bold !default;
+
+$alert-success-bg: $state-success-bg !default;
+$alert-success-text: $state-success-text !default;
+$alert-success-border: $state-success-border !default;
+
+$alert-info-bg: $state-info-bg !default;
+$alert-info-text: $state-info-text !default;
+$alert-info-border: $state-info-border !default;
+
+$alert-warning-bg: $state-warning-bg !default;
+$alert-warning-text: $state-warning-text !default;
+$alert-warning-border: $state-warning-border !default;
+
+$alert-danger-bg: $state-danger-bg !default;
+$alert-danger-text: $state-danger-text !default;
+$alert-danger-border: $state-danger-border !default;
