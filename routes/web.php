@@ -15,8 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', function() { return view('samples.test'); });
-Route::get('page1', function() { return view('samples.page1'); });
-Route::get('page2', function() { return view('samples.page2'); });
-Route::get('page3', function() { return view('samples.page3'); });
-Route::get('page4', function() { return view('samples.page4'); });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+// without pulling data from API - static pages
+Route::get('/guest', function() { return view('guest.home'); });
+Route::get('/guest/signup', function() { return view('guest.signup'); });
+Route::get('/guest/pricing', function() { return view('guest.pricing'); });
+Route::get('/guest/faq', function() { return view('guest.faq'); });
+Route::get('/contentcreator', function() { return view('contentcreator.home'); });
+Route::get('/contentcreator/videos', function() { return view('contentcreator.videos'); });
+Route::get('/viewer', function() { return view('viewer.home'); });
+Route::get('/viewer/watch', function() { return view('viewer.watch'); });
+Route::get('/viewer/channels', function() { return view('viewer.channels'); });
+Route::get('/viewer/billing', function() { return view('viewer.billing'); });
+Route::get('/viewer/faq', function() { return view('viewer.faq'); });
