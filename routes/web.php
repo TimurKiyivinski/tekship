@@ -27,6 +27,7 @@ Route::get('/guest/faq', function() { return view('guest.faq'); });
 Route::get('/contentcreator', function() { return view('contentcreator.home'); });
 Route::get('/contentcreator/videos', function() { return view('contentcreator.videos'); });
 Route::get('/viewer', function() { return view('viewer.home'); });
+Route::get('/viewer/profile', function() { return view('viewer.profile'); });
 Route::get('/viewer/watch', function() { return view('viewer.watch'); });
 Route::get('/viewer/channels', function() { return view('viewer.channels'); });
 Route::get('/viewer/billing', function() { return view('viewer.billing'); });
