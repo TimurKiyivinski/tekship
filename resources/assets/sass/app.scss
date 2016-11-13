@@ -17,6 +17,10 @@
     border: none;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 // Guest
 // Login on the navbar
 .inline-login {
@@ -30,6 +34,21 @@
 $dark-grey: #32383e;
 .list-group-item {
     background-color: $dark-grey;
+}
+
+// Home videos listing
+.col-video {
+    margin-top: 24px;
+
+    .panel-video {
+        height: 100%;
+        min-height: 100px;
+
+        .panel-body {
+            height: 100%;
+            max-height: 180px;
+        }
+    }
 }
 
 // Profile Photo
@@ -75,8 +94,4 @@ $video-placeholder-min-height: 360px;
             }
         }
     }
-}
-
-.tab-pane {
-    padding-top: 1em;
 }
