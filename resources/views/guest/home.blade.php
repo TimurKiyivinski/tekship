@@ -23,9 +23,8 @@
                 <p>
                     Sign up today at only <strong class="text-warning">$2.99/month</strong>. You can sign up with the link below
                 </p>
-                <a class="btn btn-success btn-lg btn-block" href="{{ url('guest/signup') }}">Sign Up</a>
+                <a class="btn btn-success btn-lg btn-block" href="{{ url('/register') }}">Sign Up</a>
                 <a class="btn btn-info btn-lg btn-block" href="{{ url('guest/faq') }}">FAQ</a>
-                <a class="btn btn-warning btn-lg btn-block" href="{{ url('guest/pricing') }}">Pricing</a>
             </div>
         </div>
     </div>

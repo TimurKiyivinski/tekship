@@ -125,8 +125,61 @@
                                 <h3 class="modal-title">ADD CREDIT/DEBIT CARD</h3>
                             </div>
                             <div class="modal-body">
-                                <h3>YOUR DETAILS</h3>
-                                <h3>CREDIT CARD DETAILS</h3>
+                                <form class="form-horizontal">
+                                    <h3>CREDIT CARD DETAILS</h3>
+                                    {{-- Credit Card Name --}}
+                                    <div class="form-group{{ $errors->has('creditcardname') ? ' has-error' : '' }}">
+                                        <label for="creditcardname" class="col-md-4 control-label">Credit Card Name</label>
+                                        <div class="col-md-6">
+                                            <input id="creditcardname" type="text" class="form-control" name="creditcardname" value="{{ old('creditcardname') }}">
+                                            @if ($errors->has('creditcardname'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('creditcardname') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    {{-- Credit Card Number --}}
+                                    <div class="form-group{{ $errors->has('creditcardnumber') ? ' has-error' : '' }}">
+                                        <label for="creditcardnumber" class="col-md-4 control-label">Credit Card Number</label>
+                                        <div class="col-md-6">
+                                            <input id="creditcardnumber" type="text" class="form-control" name="creditcardnumber" value="{{ old('creditcardnumber') }}">
+                                            @if ($errors->has('creditcardnumber'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('creditcardnumber') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    {{-- CVV --}}
+                                    <div class="form-group{{ $errors->has('cvv') ? ' has-error' : '' }}">
+                                        <label for="cvv" class="col-md-4 control-label">CVV</label>
+                                        <div class="col-md-3">
+                                            <input id="cvv" type="text" class="form-control" name="cvv" value="{{ old('cvv') }}">
+                                            @if ($errors->has('cvv'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('cvv') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    {{-- Expiry Date --}}
+                                    <div class="form-group{{ $errors->has('expirydate') ? ' has-error' : '' }}">
+                                        <label for="expirydate" class="col-md-4 control-label">Expiry Date</label>
+                                        <div class="col-md-3">
+                                            <input id="expirydate" type="text" class="form-control" name="expirydate" value="{{ old('expirydate') }}">
+                                            @if ($errors->has('expirydate'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('expirydate') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-user="" disabled>Deactivate Account</button>

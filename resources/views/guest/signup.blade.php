@@ -62,19 +62,33 @@
 
                     <h2>Payment Method</h2>
 
-                    {{-- Credit Card --}}
-                    <div class="form-group{{ $errors->has('creditcard') ? ' has-error' : '' }}">
-                        <label for="creditcard" class="col-md-4 control-label">Credit Card Number</label>
+                    {{-- Credit Card Name --}}
+                    <div class="form-group{{ $errors->has('creditcardname') ? ' has-error' : '' }}">
+                        <label for="creditcardname" class="col-md-4 control-label">Credit Card Name</label>
                         <div class="col-md-6">
-                            <input id="creditcard" type="text" class="form-control" name="creditcard" value="{{ old('creditcard') }}">
-                            @if ($errors->has('creditcard'))
+                            <input id="creditcardname" type="text" class="form-control" name="creditcardname" value="{{ old('creditcardname') }}">
+                            @if ($errors->has('creditcardname'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('creditcard') }}</strong>
+                                    <strong>{{ $errors->first('creditcardname') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
 
+                    {{-- Credit Card Number --}}
+                    <div class="form-group{{ $errors->has('creditcardnumber') ? ' has-error' : '' }}">
+                        <label for="creditcardnumber" class="col-md-4 control-label">Credit Card Number</label>
+                        <div class="col-md-6">
+                            <input id="creditcardnumber" type="text" class="form-control" name="creditcardnumber" value="{{ old('creditcardnumber') }}">
+                            @if ($errors->has('creditcardnumber'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('creditcardnumber') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    {{-- CVV --}}
                     <div class="form-group{{ $errors->has('cvv') ? ' has-error' : '' }}">
                         <label for="cvv" class="col-md-4 control-label">CVV</label>
                         <div class="col-md-3">
@@ -87,6 +101,18 @@
                         </div>
                     </div>
 
+                    {{-- Expiry Date --}}
+                    <div class="form-group{{ $errors->has('expirydate') ? ' has-error' : '' }}">
+                        <label for="expirydate" class="col-md-4 control-label">Expiry Date</label>
+                        <div class="col-md-3">
+                            <input id="expirydate" type="text" class="form-control" name="expirydate" value="{{ old('expirydate') }}">
+                            @if ($errors->has('expirydate'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('expirydate') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-footer">
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
