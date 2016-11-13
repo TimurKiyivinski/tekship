@@ -29,10 +29,14 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="home">
                                 @foreach ($videos as $video)
-                                    <div class="panel panel-video" style="background-image: url({{ asset($video->path) . ".jpg" }});">
+                                    <div class="col-md-4">
+                                        <div class="panel panel-video" style="background-image: url({{ asset($video->path) . ".jpg" }});">
+                                        </div>
                                     </div>
                                 @endforeach
-                                {{ $videos->links() }}
+                                <div class="col-xs-12">
+                                    {{ $videos->links() }}
+                                </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="trending">Trending</div>
                             <div role="tabpanel" class="tab-pane" id="favourites">Favourites</div>
@@ -41,7 +45,6 @@
                     </div>
                 </div>
             </div>
-
         </div> {{-- end .col --}}
     </div> {{-- end .row --}}
 </div> {{-- end .container --}}
