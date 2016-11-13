@@ -16,8 +16,47 @@
         {{-- Contents --}}
         <div class="col-md-9">
             <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>Frequently Asked Questions</h4>
+                </div>
                 <div class="panel-body">
 
+                    <ol class="faq">
+                        <li> {{-- 1 --}}
+                            {{-- Clickable Question --}}
+                            <a role="button" data-toggle="collapse" href="#faq_1" aria-expanded="false">
+                                <strong>Question:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            </a>
+                            {{-- Answer --}}
+                            <div class="collapse" id="faq_1">
+                                <div class="well">
+                                    <strong>Answer:</strong>
+                                    <p>
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li> {{-- 2 --}}
+                            {{-- Clickable Question --}}
+                            <a role="button" data-toggle="collapse" href="#faq_2" aria-expanded="false">
+                                <strong>Question:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            </a>
+                            {{-- Answer --}}
+                            <div class="collapse" id="faq_2">
+                                <div class="well">
+                                    <strong>Answer:</strong>
+                                    <p>
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
             </div>
 
