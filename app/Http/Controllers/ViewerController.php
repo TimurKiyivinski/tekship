@@ -17,7 +17,12 @@ class ViewerController extends Controller
         $subscription_ids = Subscription::where('user_id', Auth::user()->id)->get()->map(function ($subscription) {
             return $subscription->subscription_id;
         });
-        $videos = Video::where('user_id', $subscription_ids)->orderBy('created_at', 'desc')->paginate(12);
+
+        if (sizeof($subscription_ids) > 0) {
+            $videos = Video::where('user_id', $subscription_ids)->orderBy('created_at', 'desc')->paginate(12);
+        } else {
+            $videos = [];
+        }
 
         return view('viewer.home', [
             'videos' => $videos
