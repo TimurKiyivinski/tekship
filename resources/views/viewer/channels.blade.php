@@ -9,7 +9,6 @@
                 <a href="{{ url('/viewer') }}" class="list-group-item">Home</a>
                 <a href="{{ url('/viewer/profile') }}" class="list-group-item">Profile</a>
                 <a href="{{ url('/viewer/channels') }}" class="list-group-item active">Channels</a>
-                <a href="{{ url('/viewer/billing') }}" class="list-group-item">Billing</a>
                 <a href="{{ url('/viewer/faq') }}" class="list-group-item">FAQ</a>
             </div>
         </div>

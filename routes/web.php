@@ -25,10 +25,6 @@ Route::group([
         return view('guest.signup');
     })->name('guest.signup');
 
-    Route::get('/pricing', function() {
-        return view('guest.pricing');
-    })->name('guest.pricing');
-
     Route::get('/faq', function() {
         return view('guest.faq');
     })->name('guest.faq');
@@ -53,10 +49,6 @@ Route::group([
     Route::get('/channels', function() {
         return view('viewer.channels');
     })->name('viewer.channels');
-
-    Route::get('/billing', function() {
-        return view('viewer.billing');
-    })->name('viewer.billing');
 
     Route::get('/faq', function() {
         return view('viewer.faq');
