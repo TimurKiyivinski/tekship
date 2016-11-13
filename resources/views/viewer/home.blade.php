@@ -44,7 +44,9 @@
                                     </div>
                                 @endforeach
                                 <div class="col-xs-12">
-                                    {{ $videos->links() }}
+                                    @if (sizeof($videos) > 0)
+                                        {{ $videos->links() }}
+                                    @endif
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="trending">Trending</div>
