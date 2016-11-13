@@ -13,12 +13,5 @@ require('./bootstrap')
  */
 
 ;(function () {
-  const url = (window.location.pathname + window.location.search).substr(1)
-
-  try {
-    console.log(`Loading JS for ${url}`)
-    require(url)
-  } catch (e) {
-    console.log(`Unable to load ${url}`)
-  }
+  console.log('Welcome to TekShip')
 })()
