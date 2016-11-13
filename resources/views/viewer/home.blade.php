@@ -30,7 +30,7 @@
                             <div role="tabpanel" class="tab-pane active" id="home">
                                 @foreach ($videos as $video)
                                     <div class="col-md-4 col-video">
-                                        <a href="#">
+                                    <a href="{{ route('viewer.watch', $video->id) }}">
                                             <div class="panel panel-video">
                                                 <div class="panel-body" style="background-image: url({{ asset($video->path) . ".jpg" }});">
 
