@@ -51,12 +51,14 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li class="inline-login">
-                                <form class="form-inline">
+                                <form class="form-inline" role="form" method="POST" action="{{ url('/login') }}">
+                                    {{ csrf_field() }}
+
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="usernameInput" placeholder="Email">
+                                        <input type="text" class="form-control" name="email" placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" name="passwordInput" placeholder="Password">
+                                        <input type="password" class="form-control" name="password" placeholder="Password">
                                     </div>
                                     <button type="submit" class="btn btn-primary" name="btn-login">Login</button>
                                 </form>
