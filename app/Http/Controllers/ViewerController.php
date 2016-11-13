@@ -22,4 +22,13 @@ class ViewerController extends Controller
             'videos' => $videos
         ]);
     }
+
+    public function watch($id)
+    {
+        $video = Video::findOrFail($id);
+
+        return view('viewer.watch', [
+            'video' => $video
+        ]);
+    }
 }

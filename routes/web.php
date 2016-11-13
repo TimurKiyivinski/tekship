@@ -33,15 +33,17 @@ Route::group([
     'middleware' => 'auth',
     'prefix' => 'viewer'
 ], function () {
-    Route::get('/', 'ViewerController@home')->name('viewer.home');
+    Route::get('/', 'ViewerController@home')
+        ->name('viewer.home');
+
+    Route::get('/watch/{id}', 'ViewerController@watch')
+        ->where('id', '[0-9]+')
+        ->name('viewer.watch');
 
     Route::get('/profile', function() {
         return view('viewer.profile');
     })->name('viewer.profile');
 
-    Route::get('/watch', function() {
-        return view('viewer.watch');
-    })->name('viewer.watch');
 
     Route::get('/channels', function() {
         return view('viewer.channels');

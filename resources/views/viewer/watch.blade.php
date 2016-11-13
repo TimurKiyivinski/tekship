@@ -17,6 +17,14 @@
         <div class="col-md-9">
             <div class="panel panel-primary">
                 <div class="panel-body">
+                    <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+                        poster="{{ asset($video->path) . ".jpg" }}" data-setup="{}">
+                        <source src="{{ asset($video->path) }}" type='video/webm'>
+                        <p class="vjs-no-js">
+                            To view this video please enable JavaScript, and consider upgrading to a web browser that
+                            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                        </p>
+                    </video>
 
                 </div>
             </div>
@@ -24,4 +32,8 @@
         </div> {{-- end .col --}}
     </div> {{-- end .row --}}
 </div> {{-- end .container --}}
+@endsection
+
+@section('js_extra')
+    <script type="text/javascript" src="{{ asset('js/watch.js') }}"></script>
 @endsection
