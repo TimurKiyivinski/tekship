@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Comment;
+use Illuminate\Support\Facades\Auth;
+
+use App\Comment;
 
 class CommentController extends Controller
 {

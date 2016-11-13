@@ -17,14 +17,18 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::resource('/video', 'VideoController', [
-    'only' => ['index', 'store', 'show', 'update', 'destroy']
-]);
+Route::group([
+    'middleware' => 'auth'
+], function () {
+    Route::resource('/video', 'VideoController', [
+        'only' => ['index', 'store', 'show', 'update', 'destroy']
+    ]);
 
-Route::resource('/comment', 'CommentController', [
-    'only' => ['index', 'store', 'show', 'update', 'destroy']
-]);
+    Route::resource('/comment', 'CommentController', [
+        'only' => ['index', 'store', 'show', 'update', 'destroy']
+    ]);
 
-Route::resource('/subscribe', 'SubscriptionController', [
-    'only' => ['index', 'store', 'show', 'update', 'destroy']
-]);
+    Route::resource('/subscribe', 'SubscriptionController', [
+        'only' => ['index', 'store', 'show', 'update', 'destroy']
+    ]);
+});

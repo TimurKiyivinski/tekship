@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Subscription;
+use Illuminate\Support\Facades\Auth;
+
+use App\Subscription;
 
 class SubscriptionController extends Controller
 {
