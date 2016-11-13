@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\User;
 use App\Video;
 use App\Subscription;
 
@@ -29,6 +30,25 @@ class ViewerController extends Controller
 
         return view('viewer.watch', [
             'video' => $video
+        ]);
+    }
+
+    public function profile()
+    {
+        return view('viewer.profile', [
+            'user' => Auth::user()
+        ]);
+    }
+
+    public function channels()
+    {
+        $subscriptions = Subscription::where('user_id', Auth::id())->paginate(12);
+        foreach($subscriptions as &$subscription) {
+            $subscription->channel = User::find($subscription->subscription_id);
+        }
+
+        return view('viewer.channels', [
+            'subscriptions' => $subscriptions
         ]);
     }
 }

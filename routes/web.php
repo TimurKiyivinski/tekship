@@ -40,14 +40,12 @@ Route::group([
         ->where('id', '[0-9]+')
         ->name('viewer.watch');
 
-    Route::get('/profile', function() {
-        return view('viewer.profile');
-    })->name('viewer.profile');
+    Route::get('/profile', 'ViewerController@profile')
+        ->name('viewer.profile');
 
 
-    Route::get('/channels', function() {
-        return view('viewer.channels');
-    })->name('viewer.channels');
+    Route::get('/channels', 'ViewerController@channels')
+        ->name('viewer.channels');
 
     Route::get('/faq', function() {
         return view('viewer.faq');
