@@ -29,6 +29,16 @@ $dark-grey: #32383e;
     background-color: $dark-grey;
 }
 
+// Profile Photo
+.profile-photo {
+    margin: 0 auto;
+    width: 100px;
+
+    img {
+        background-color: #fff;
+    }
+}
+
 // Page 1
 // placeholder for the video
 $video-placeholder-min-width: 480px;
