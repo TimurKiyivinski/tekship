@@ -27,9 +27,15 @@ class ViewerController extends Controller
     public function watch($id)
     {
         $video = Video::findOrFail($id);
+        $comments = Video::find($id)->comments()->paginate(5);
+
+        foreach ($comments as &$comment) {
+            $comment->user = User::find($comment->user_id);
+        }
 
         return view('viewer.watch', [
-            'video' => $video
+            'video' => $video,
+            'comments' => $comments
         ]);
     }
 

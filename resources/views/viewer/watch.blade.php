@@ -31,6 +31,15 @@
                     </div> {{-- end .videocontent --}}
                 </div>
             </div>
+            @foreach($comments as $comment)
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <h4>{{ $comment->user->name }}</h4>
+                        <p>{{ $comment->data }}</p>
+                    </div>
+                </div>
+            @endforeach
+            {{ $comments->links() }}
 
         </div> {{-- end .col --}}
     </div> {{-- end .row --}}
