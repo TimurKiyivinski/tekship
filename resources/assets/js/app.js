@@ -14,4 +14,7 @@ require('./bootstrap')
 
 ;(function () {
   console.log('Welcome to TekShip')
+  $('.panel-video').map(function () {
+    $(this).height($(this).width())
+  })
 })()
