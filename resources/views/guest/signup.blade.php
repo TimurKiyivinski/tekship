@@ -61,15 +61,6 @@
 
 
                     <h2>Payment Method</h2>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Select your payment option</label>
-                        <div class="col-md-6">
-                            <select class="form-control" name="paymentChoice">
-                                <option value="credit">Credit Card</option>
-                                <option value="paypal">PayPal</option>
-                            </select>
-                        </div>
-                    </div>
 
                     {{-- Credit Card --}}
                     <div class="form-group{{ $errors->has('creditcard') ? ' has-error' : '' }}">
@@ -96,19 +87,6 @@
                         </div>
                     </div>
 
-                    {{-- PayPal --}}
-                    <div class="form-group{{ $errors->has('paypalID') ? ' has-error' : '' }}">
-                        <label for="paypalID" class="col-md-4 control-label">PayPal ID</label>
-                        <div class="col-md-6">
-                            <input id="paypalID" type="text" class="form-control" name="paypalID" value="{{ old('paypalID') }}">
-                            @if ($errors->has('paypalID'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('paypalID') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
                 </div>
                 <div class="panel-footer">
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
@@ -117,13 +95,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('extra_js')
-<script src="{{ asset('js/app.js') }}"></script>
-<script>
-(function() {
-console.log('test')
-}) ()
-</script>
 @endsection

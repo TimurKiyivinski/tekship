@@ -11,24 +11,71 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
 
-// without pulling data from API - static pages
-Route::get('/guest', function() { return view('guest.home'); });
-Route::get('/guest/signup', function() { return view('guest.signup'); });
-Route::get('/guest/pricing', function() { return view('guest.pricing'); });
-Route::get('/guest/faq', function() { return view('guest.faq'); });
-Route::get('/contentcreator', function() { return view('contentcreator.home'); });
-Route::get('/contentcreator/videos', function() { return view('contentcreator.videos'); });
-Route::get('/viewer', function() { return view('viewer.home'); });
-Route::get('/viewer/profile', function() { return view('viewer.profile'); });
-Route::get('/viewer/watch', function() { return view('viewer.watch'); });
-Route::get('/viewer/channels', function() { return view('viewer.channels'); });
-Route::get('/viewer/billing', function() { return view('viewer.billing'); });
-Route::get('/viewer/faq', function() { return view('viewer.faq'); });
+Route::group([
+    'prefix' => 'guest'
+], function () {
+    Route::get('/', function() {
+        return view('guest.home');
+    })->name('guest.index');
+
+    Route::get('/signup', function() {
+        return view('guest.signup');
+    })->name('guest.signup');
+
+    Route::get('/pricing', function() {
+        return view('guest.pricing');
+    })->name('guest.pricing');
+
+    Route::get('/faq', function() {
+        return view('guest.faq');
+    })->name('guest.faq');
+});
+
+Route::group([
+    'middleware' => 'auth',
+    'prefix' => 'viewer'
+], function () {
+    Route::get('/', function() {
+        return view('viewer.home');
+    })->name('viewer.home');
+
+    Route::get('/profile', function() {
+        return view('viewer.profile');
+    })->name('viewer.profile');
+
+    Route::get('/watch', function() {
+        return view('viewer.watch');
+    })->name('viewer.watch');
+
+    Route::get('/channels', function() {
+        return view('viewer.channels');
+    })->name('viewer.channels');
+
+    Route::get('/billing', function() {
+        return view('viewer.billing');
+    })->name('viewer.billing');
+
+    Route::get('/faq', function() {
+        return view('viewer.faq');
+    })->name('viewer.faq');
+});
+
+Route::group([
+    'middleware' => 'auth',
+    'prefix' => 'creator'
+], function () {
+    Route::get('/', function() {
+        return view('creator.home');
+    })->name('creator.home');
+
+    Route::get('/videos', function() {
+        return view('creator.videos');
+    })->name('creator.videos');
+});
+
+Route::get('/', function () {
+    return redirect()->route('guest.index');
+});
