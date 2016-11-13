@@ -29,9 +29,18 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="home">
                                 @foreach ($videos as $video)
-                                    <div class="col-md-4">
-                                        <div class="panel panel-video" style="background-image: url({{ asset($video->path) . ".jpg" }});">
-                                        </div>
+                                    <div class="col-md-4 col-video">
+                                        <a href="#">
+                                            <div class="panel panel-video">
+                                                <div class="panel-body" style="background-image: url({{ asset($video->path) . ".jpg" }});">
+
+                                                </div>
+                                                <div class="panel-footer">
+                                                    <p><strong class="video-title">Title</strong> <span class="video-duration">12.00</span></p>
+                                                    <p class="video-published_at">12 Nov 2016</p>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 @endforeach
                                 <div class="col-xs-12">
