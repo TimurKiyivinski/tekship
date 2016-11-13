@@ -16,8 +16,16 @@
         {{-- Contents --}}
         <div class="col-md-9">
             <div class="panel panel-primary">
-                <div class="panel-body">
-
+                <div class="panel-heading">
+                    User Subscriptions
+                </div>
+                <ul class="list-group">
+                    @foreach($subscriptions as $subscription)
+                        <li class="list-group-item">{{ $subscription->channel->name }}</a>
+                    @endforeach
+                </ul>
+                <div class="panel-heading">
+                    {{ $subscriptions->links() }}
                 </div>
             </div>
 

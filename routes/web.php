@@ -44,9 +44,8 @@ Route::group([
         ->name('viewer.profile');
 
 
-    Route::get('/channels', function() {
-        return view('viewer.channels');
-    })->name('viewer.channels');
+    Route::get('/channels', 'ViewerController@channels')
+        ->name('viewer.channels');
 
     Route::get('/faq', function() {
         return view('viewer.faq');
