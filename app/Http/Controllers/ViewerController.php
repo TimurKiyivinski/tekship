@@ -31,4 +31,11 @@ class ViewerController extends Controller
             'video' => $video
         ]);
     }
+
+    public function profile()
+    {
+        return view('viewer.profile', [
+            'user' => Auth::user()
+        ]);
+    }
 }
