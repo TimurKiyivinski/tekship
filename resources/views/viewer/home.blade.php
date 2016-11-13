@@ -28,7 +28,13 @@
 
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="home">Home</div>
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                @foreach ($videos as $video)
+                                    <div class="panel panel-video" style="background-image: url({{ asset($video->path) . ".jpg" }});">
+                                    </div>
+                                @endforeach
+                                {{ $videos->links() }}
+                            </div>
                             <div role="tabpanel" class="tab-pane" id="trending">Trending</div>
                             <div role="tabpanel" class="tab-pane" id="favourites">Favourites</div>
                         </div>

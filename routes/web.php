@@ -13,7 +13,6 @@
 
 Auth::routes();
 
-
 Route::group([
     'prefix' => 'guest'
 ], function () {
@@ -38,9 +37,7 @@ Route::group([
     'middleware' => 'auth',
     'prefix' => 'viewer'
 ], function () {
-    Route::get('/', function() {
-        return view('viewer.home');
-    })->name('viewer.home');
+    Route::get('/', 'ViewerController@home')->name('viewer.home');
 
     Route::get('/profile', function() {
         return view('viewer.profile');

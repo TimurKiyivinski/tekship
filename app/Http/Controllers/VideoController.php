@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Video;
+use Illuminate\Support\Facades\Auth;
+
+use App\Video;
 
 class VideoController extends Controller
 {
